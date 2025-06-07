@@ -31,6 +31,7 @@ export class StaffList implements OnInit {
     gender:'Male',
     logged_in:'yes'
   }]
+  mocStaff: any = [];
   constructor(private router: Router,private myservice: MyService){
     
   }
@@ -38,6 +39,7 @@ export class StaffList implements OnInit {
   ngOnInit(): void {
     this.myservice.getData().subscribe((response: any)=>{
       this.staffs = response.records;
+      this.mocStaff = response.records;
       console.log(response);
       
     })
@@ -47,6 +49,10 @@ export class StaffList implements OnInit {
     {value: 'week', key: 'This Week'},
   ];
 
+  inputChange(event: any): any{
+    const string = event.target.value.toLowerCase();
+    this.staffs = this.mocStaff.filter((data: any)=> data.name.toLowerCase().includes(string));
+  }
 
   navigateToDetails(): any{
     console.log("navigate")
