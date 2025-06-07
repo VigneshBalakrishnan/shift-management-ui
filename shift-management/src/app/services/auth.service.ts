@@ -8,12 +8,19 @@ export class AuthService {
   private isAuthenticated = true;
   private authSecretKey = 'Bearer Token';
 
-  constructor() { 
+  constructor() {
     // this.isAuthenticated = !!localStorage.getItem(this.authSecretKey);
   }
 
   isAuthenticatedUser(): boolean {
     return this.isAuthenticated;
+  }
+
+  login(admin: any): boolean {
+    console.log(admin);
+
+    return true;
+
   }
 
   logout(): void {
