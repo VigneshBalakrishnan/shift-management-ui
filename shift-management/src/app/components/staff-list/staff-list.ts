@@ -37,7 +37,7 @@ export class StaffList implements OnInit {
 
   ngOnInit(): void {
     this.myservice.getData().subscribe((response: any)=>{
-      this.staffs = response;
+      this.staffs = response.records;
       console.log(response);
       
     })

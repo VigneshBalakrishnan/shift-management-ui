@@ -9,7 +9,7 @@
         </div>
         <a routerLink="/new-staff" class="border border-gray-200 rounded-md p-2 text-[12px] text-gray-500 ">New Staff</a>
     </div>
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <table class="w-full h-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr class="bg-gray-100" >
                 <th scope="col" class="px-6 py-3">
@@ -42,16 +42,16 @@
                         {{staff.email}}
                     </td>
                     <td class="px-6 py-4">
-                        {{staff.role}}
+                        {{staff.role.role}}
                     </td>
                     <td class="px-6 py-4">
-                        {{staff.department}}
+                        {{staff.department.department}}
                     </td>
                     <td class="px-6 py-4">
                         {{staff.gender}}
                     </td>
                     <td class="px-6 py-4">
-                        {{staff.logged_in}}
+                       yes
                     </td>
                 </tr>
             }
